@@ -1,8 +1,10 @@
-<ul>
-<% @pokemons.each do |pokemon| %>
-  <li>
-    <%= pokemon.name %>
-    <%= pokemon.type %>
-  </li>
-  <% end %>
-</ul>
+<div class="container">
+  <ul>
+  <% @pokemons.each do |pokemon| %>
+    <li>
+      <%= link_to pokemon.name, pokemon_path(pokemon) %>
+      <%= cl_image_tag pokemon.photo.key %>
+    </li>
+    <% end %>
+  </ul>
+</div>

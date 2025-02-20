@@ -1,0 +1,6 @@
+<div class="container">
+  <%= @pokemon.name %>
+  <%= @pokemon.element_type %>
+  <%= cl_image_tag @pokemon.photo.key %>
+  <%= link_to "Back", pokemons_path %>
+</div>

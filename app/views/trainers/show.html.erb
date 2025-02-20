@@ -1,0 +1,11 @@
+<div class="container">
+  <%= @trainer.name %>
+  <%= @trainer.age %>
+  <%= cl_image_tag @trainer.photo.key %>
+  <%= link_to "Back", trainers_path %>
+
+  <% @trainer.pokemons.each do |pokemon| %>
+    <%= link_to pokemon.name, pokemon_path(pokemon) %>
+    <%= cl_image_tag pokemon.photo.key %>
+  <% end %>
+</div>
