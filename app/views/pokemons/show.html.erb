@@ -4,3 +4,10 @@
   <%= cl_image_tag @pokemon.photo.key %>
   <%= link_to "Back", pokemons_path %>
 </div>
+
+  <%= simple_form_for [@pokemon, @pokeball] do |f| %>
+    <%= f.association :trainer, label: "Who's trying their luck?" %>
+    <%= f.input :location, label: "Where are you?" %>
+    <%= f.input  :caught_on, html5: true, label: "When?" %>
+    <%= f.submit "Catch!", class: "btn btn-primary" %>
+  <% end %>
