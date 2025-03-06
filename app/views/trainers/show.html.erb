@@ -1,25 +1,25 @@
 <div class="container">
   <div class="row">
-    <div class="col-6">
+    <div class="col-md-6">
       <%= @trainer.name %>
       <%= @trainer.age %>
       <%= cl_image_tag @trainer.photo.key %>
       <%= link_to "Back", trainers_path %>
     </div>
-    <div class="card-deck">
-    <% @trainer.pokeballs.each do |pokeball| %>
-      <div class="card">
-        <div class="card-img-top">
-        <%= cl_image_tag pokeball.pokemon.photo.key %>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title"><%= pokeball.pokemon.name %></h5>
-          <p class="card-text"><%= pokeball.pokemon.element_type %></p>
-          <p class="card-text"><%= pokeball.caught_on %></p>
-          <p class="card-text"><%= pokeball.location %></p>
+      <% @trainer.pokeballs.each do |pokeball| %>
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-img-top">
+          <%= cl_image_tag pokeball.pokemon.photo.key %>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><%= pokeball.pokemon.name %></h5>
+            <p class="card-text"><%= pokeball.pokemon.element_type %></p>
+            <p class="card-text"><%= pokeball.caught_on %></p>
+            <p class="card-text"><%= pokeball.location %></p>
+          </div>
         </div>
       </div>
     <% end %>
-    </div>
   </div>
 </div>

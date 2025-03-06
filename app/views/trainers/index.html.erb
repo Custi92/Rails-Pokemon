@@ -8,4 +8,8 @@
     </li>
     <% end %>
   </ul>
+  <%= simple_form_for(@trainers) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :age %>
+  <%= f.input :photo, as: :file %>
 </div>
