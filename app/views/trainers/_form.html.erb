@@ -1,0 +1,6 @@
+<%= simple_form_for(@trainer) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :age %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>

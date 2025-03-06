@@ -4,12 +4,9 @@
     <li>
       <%= link_to trainer.name, trainer_path(trainer) %>
       <%= trainer.age %>
-      <%= cl_image_tag trainer.photo.key %>
+      <%= cl_image_tag trainer.photo.key, height: 500, width: 300 %>
     </li>
     <% end %>
   </ul>
-  <%= simple_form_for(@trainers) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :age %>
-  <%= f.input :photo, as: :file %>
+  <%= link_to "Create a new trainer", new_trainer_path %>
 </div>

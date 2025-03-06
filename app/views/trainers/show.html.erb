@@ -21,5 +21,6 @@
         </div>
       </div>
     <% end %>
+    <%= link_to "Delete", trainer_path(@trainer), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   </div>
 </div>

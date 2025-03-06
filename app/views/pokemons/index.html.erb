@@ -1,10 +1,16 @@
 <div class="container">
+  <%= form_with url: root_path, method: :get do |f| %>
+    <%= f.text_field :search, placeholder: "Jigglypuff", class: "form-control", value: params[:search] %>
+    <%= f.label :search, "Search for a Pokémon" %>
+    <%= f.submit "Search", class: "btn btn-primary" %>
+  <% end %>
   <ul>
+
   <% @pokemons.each do |pokemon| %>
     <li>
       <%= link_to pokemon.name, pokemon_path(pokemon) %>
       <%= cl_image_tag pokemon.photo.key %>
     </li>
-    <% end %>
+  <% end %>
   </ul>
 </div>
