@@ -1,7 +1,10 @@
 class PokemonsController < ApplicationController
 
   def index
-    @pokemons = Pokemon.search(params[:search])
+    @pokemons = Pokemon.all
+    if params[:query].present?
+      @pokemons = @pokemons.where("name ILIKE ?", "%#{params[:query]}%")
+    end
   end
 
   def show
